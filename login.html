@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>YusufSpeedShop | Login</title>
+
+<link rel="stylesheet" href="styles.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+  .highlight { color: #d40000; font-weight: bold; }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>YusufSpeedShop</h1>
+  <p>Your Home for Performance Tuning</p>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="storefront.html">YusufSpeedShop</a>
+
+    <!-- Put these inside the navbar styling so they look right -->
+    <div class="d-flex gap-3 ms-3">
+      <a class="nav-link text-white" href="signup.html">Sign Up</a>
+      <a class="nav-link text-white active" href="login.html">Login</a>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="storefront.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Images</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <h2 class="mb-3">Login</h2>
+          <p class="text-muted">Welcome back to <span class="highlight">YusufSpeedShop</span>.</p>
+
+          <form action="#" method="post" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+              <div class="invalid-feedback">Please enter your email.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+              <div class="invalid-feedback">Please enter your password.</div>
+            </div>
+
+            <button type="submit" class="btn btn-dark w-100">Login</button>
+
+            <p class="mt-3 mb-0 text-center">
+              Don’t have an account? <a href="signup.html">Sign up</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 YusufSpeedShop. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+(() => {
+  "use strict";
+  const forms = document.querySelectorAll(".needs-validation");
+  Array.from(forms).forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add("was-validated");
+    }, false);
+  });
+})();
+</script>
+
+</body>
+</html>
