@@ -40,7 +40,6 @@ Liya Aji - JSON Object Creation
         shopperAddress: address
     };
     const jsonOutput = JSON.stringify(shopperJSON, null, 4);
-    
-    output.textContent = jsonOutput;
+
   });
 });
