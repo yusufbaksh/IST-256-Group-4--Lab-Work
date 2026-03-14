@@ -1,6 +1,8 @@
 /*
 Person 1: Yusuf Baksh
 Task: Form Data Collection
+Person 2: Liya Aji
+Task: JSON Object/Shopper Document Creation
 */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -26,11 +28,19 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    output.textContent =
-      "Email: " + email + "\n" +
-      "Name: " + name + "\n" +
-      "Phone: " + phone + "\n" +
-      "Age: " + age + "\n" +
-      "Address: " + address;
+/*
+Liya Aji - JSON Object Creation
+*/
+
+    const shopperJSON = {
+        shopperEmail: email,
+        shopperName: name,
+        shopperPhone: phone,
+        shopperAge: age,
+        shopperAddress: address
+    };
+    const jsonOutput = JSON.stringify(shopperJSON, null, 4);
+    
+    output.textContent = jsonOutput;
   });
 });
