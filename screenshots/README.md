@@ -1,4 +1,4 @@
 Screenshots for the Shopper Management page.
 
-shopperform.png: shows the form rendering in the browser
-jsonoutput.png: shows the JSON output after clicking submit
+1. shopperform.png: shows the form rendering in the browser
+2. jsonoutput.png: shows the JSON output after clicking submit
