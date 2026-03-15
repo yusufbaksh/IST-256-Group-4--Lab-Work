@@ -3,6 +3,8 @@ Person 1: Yusuf Baksh
 Task: Form Data Collection
 Person 2: Liya Aji
 Task: JSON Object/Shopper Document Creation
+Person 3: Martin Shestani
+Task: Display JSON on the web page after submit
 */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -40,6 +42,7 @@ Liya Aji - JSON Object Creation
         shopperAddress: address
     };
     const jsonOutput = JSON.stringify(shopperJSON, null, 4);
+    document.getElementById("jsonOutput").textContent = jsonOutput;
 
   });
 });
