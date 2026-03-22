@@ -2,6 +2,7 @@
 Person 1: Liya Aji
 Task: Search
 */
+
 let product = {
     productId: "101",
     productDesc: "Engine Tune",
@@ -11,23 +12,23 @@ let product = {
     productWeight: "10"
 };
 
-/*
-Liya Aji - Search Function
-*/
-
-$("#searchBtn").click(function () {
-
-    let searchId = $("#searchId").val();
-
-    if (product.productId === searchId) {
-        $("#jsonOutput").text(JSON.stringify(product, null, 4));
-    } else {
-        $("#jsonOutput").text("Product not found");
-    }
-
-});
 $(document).ready(function () {
 
+    // 🔍 Person 1: Liya Aji (Search)
+    $("#searchBtn").click(function () {
+        let searchId = $("#searchId").val().trim();
+
+        if (product.productId === searchId) {
+            $("#jsonOutput").text(JSON.stringify(product, null, 4));
+        } else {
+            $("#jsonOutput").text("Product not found");
+        }
+    });
+
+    /*
+    Author: Yusuf Baksh
+    Task: Save / JSON
+    */
     let productList = [];
 
     $("#saveBtn").click(function () {
