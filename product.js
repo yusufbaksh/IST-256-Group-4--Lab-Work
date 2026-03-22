@@ -26,57 +26,53 @@ $("#searchBtn").click(function () {
     }
 
 });
-/*
-Author: Yusuf Baksh
-Task: Save / JSON
-*/
+$(document).ready(function () {
 
-let productList = [];
+    let productList = [];
 
-$("#saveBtn").click(function () {
+    $("#saveBtn").click(function () {
 
-    let productId = $("#productId").val().trim();
-    let productDescription = $("#productDescription").val().trim();
-    let productCategory = $("#productCategory").val();
-    let unitMeasure = $("#unitMeasure").val();
-    let productPrice = $("#productPrice").val().trim();
-    let productWeight = $("#productWeight").val().trim();
+        let productId = $("#productId").val().trim();
+        let productDescription = $("#productDescription").val().trim();
+        let productCategory = $("#productCategory").val();
+        let unitMeasure = $("#unitMeasure").val();
+        let productPrice = $("#productPrice").val().trim();
+        let productWeight = $("#productWeight").val().trim();
 
-    // Validation
-    if (
-        productId === "" ||
-        productDescription === "" ||
-        productCategory === "" ||
-        unitMeasure === "" ||
-        productPrice === ""
-    ) {
-        alert("Please fill in all required fields.");
-        return;
-    }
+        // Validation
+        if (
+            productId === "" ||
+            productDescription === "" ||
+            productCategory === "" ||
+            unitMeasure === "" ||
+            productPrice === ""
+        ) {
+            alert("Please fill in all required fields.");
+            return;
+        }
 
-    if (isNaN(productPrice)) {
-        alert("Price must be a number.");
-        return;
-    }
+        if (isNaN(productPrice)) {
+            alert("Price must be a number.");
+            return;
+        }
 
-    if (productWeight !== "" && isNaN(productWeight)) {
-        alert("Weight must be a number.");
-        return;
-    }
+        if (productWeight !== "" && isNaN(productWeight)) {
+            alert("Weight must be a number.");
+            return;
+        }
 
-    // Create JSON
-    let productObject = {
-        productId: productId,
-        productDescription: productDescription,
-        productCategory: productCategory,
-        unitMeasure: unitMeasure,
-        productPrice: "$" + Number(productPrice).toFixed(2),
-        productWeight: productWeight === "" ? "N/A" : productWeight
-    };
+        let productObject = {
+            productId: productId,
+            productDescription: productDescription,
+            productCategory: productCategory,
+            unitMeasure: unitMeasure,
+            productPrice: "$" + Number(productPrice).toFixed(2),
+            productWeight: productWeight === "" ? "N/A" : productWeight
+        };
 
-    // Save
-    productList.push(productObject);
+        productList.push(productObject);
 
-    // Display JSON
-    $("#jsonOutput").text(JSON.stringify(productList, null, 4));
+        $("#jsonOutput").text(JSON.stringify(productList, null, 4));
+    });
+
 });
