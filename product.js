@@ -13,6 +13,7 @@ let product = {
 };
 
 $(document).ready(function () {
+    let productList = [];
 
     // 🔍 Person 1: Liya Aji (Search)
     $("#searchBtn").click(function () {
@@ -41,7 +42,6 @@ $(document).ready(function () {
     Author: Yusuf Baksh
     Task: Save / JSON
     */
-    let productList = [];
 
     $("#saveBtn").click(function () {
 
