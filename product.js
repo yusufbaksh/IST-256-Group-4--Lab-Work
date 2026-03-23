@@ -16,14 +16,26 @@ $(document).ready(function () {
 
     // 🔍 Person 1: Liya Aji (Search)
     $("#searchBtn").click(function () {
-        let searchId = $("#searchId").val().trim();
+    let searchId = $("#searchId").val().trim();
 
-        if (product.productId === searchId) {
-            $("#jsonOutput").text(JSON.stringify(product, null, 4));
-        } else {
-            $("#jsonOutput").text("Product not found");
-        }
+    // Look inside saved products
+    let foundProduct = productList.find(function(p) {
+        return p.productId === searchId;
     });
+
+    // If found in saved list
+    if (foundProduct) {
+        $("#jsonOutput").text(JSON.stringify(foundProduct, null, 4));
+    } 
+    // If not found, check the original product
+    else if (product.productId === searchId) {
+        $("#jsonOutput").text(JSON.stringify(product, null, 4));
+    } 
+    // If not found anywhere
+    else {
+        $("#jsonOutput").text("Product not found");
+    }
+});
 
     /*
     Author: Yusuf Baksh
