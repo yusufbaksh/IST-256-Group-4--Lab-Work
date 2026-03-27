@@ -65,7 +65,7 @@ $(document).ready(function () {
     $("#grandTotal").text(grandTotal.toFixed(2));
     $("#jsonOutput").text(JSON.stringify(cart, null, 4));
 
-    // Quantity change handler
+    
     $(".qtyInput").on("change", function() {
         let idx = $(this).data("index");
         let val = parseInt($(this).val());
@@ -75,7 +75,6 @@ $(document).ready(function () {
         renderCart();
     });
 
-    // ✅ Remove button with confirmation
     $(".removeBtn").on("click", function() {
         let idx = $(this).data("index");
         if(confirm(`Remove ${cart[idx].productName} from cart?`)) {
