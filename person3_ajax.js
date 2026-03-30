@@ -6,7 +6,7 @@ function sendCartToAPI(cartData) {
     console.log("Sending cart data to API:", cartData);
 
     $.ajax({
-        url: "https://webhook.site/94c79f0c-6e9d-481b-bca5-ec77c97e8bf1",
+        url: "https://your-api-endpoint.com/api/cart",
         type: "POST",
         data: JSON.stringify(cartData),
         contentType: "application/json",
