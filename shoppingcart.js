@@ -97,25 +97,13 @@ $(document).ready(function () {
         renderCart();
     };
     $("#checkoutBtn").click(function () {
-        if (cart.length === 0) {
+    if (cart.length === 0) {
         alert("Your cart is empty.");
         return;
-        }
-    let jsonData = JSON.stringify(cart);
+    }
 
-    $.ajax({
-        url: "https://example.com/api/cart", // placeholder
-        method: "POST",
-        data: jsonData,
-        contentType: "application/json",
-        success: function () {
-            alert("Cart sent successfully!");
-        },
-        error: function () {
-            alert("API not connected yet (expected)");
-        }
+    sendCartToAPI(cart);
     });
 
 });
 
-});
