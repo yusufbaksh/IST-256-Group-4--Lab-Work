@@ -25,7 +25,7 @@
 <div class="container mt-5">
     <h2>Shipping Selection</h2>
 
-    <form name="shippingForm" ng-submit="shipCtrl.submitForm()">
+    <form name="shippingForm">
         <div class="form-group">
             <label for="address">Address:</label>
             <input type="text" id="address" class="form-control" ng-model="shipCtrl.shipping.address" required>
@@ -66,13 +66,18 @@
             </select>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <!-- Person 3: Liya Aji -->
+      
+    <button type="button" class="btn btn-primary" ng-click="shipCtrl.submitForm()">Submit</button>
     </form>
 
     <!-- JSON Output -->
     <div class="mt-4">
         <h4>Shipping JSON Data:</h4>
+      
+        <div ng-show="shipCtrl.showJSON">
         <pre>{{ shipCtrl.shipping | json }}</pre>
+    </div>
     </div>
 </div>
 
@@ -81,16 +86,32 @@
     angular.module('shippingApp', [])
         .controller('ShippingController', function() {
             var vm = this;
+          
+            /*
+            Person 3: Liya Aji
+            Task: Show JSON + validation + UI control
+            */
+
             vm.shipping = {};
+            vm.showJSON = false;
+
             vm.submitForm = function() {
-                if (vm.shipping.address && vm.shipping.city && vm.shipping.state && vm.shipping.zip &&
-                    vm.shipping.carrier && vm.shipping.method) {
-                    alert("Shipping details submitted!");
-                    console.log("Shipping JSON:", vm.shipping);
-                } else {
-                    alert("Please complete all required fields.");
-                }
-            };
+
+              if (vm.shipping.address &&
+                  vm.shipping.city &&
+                  vm.shipping.state &&
+                  vm.shipping.zip &&
+                  vm.shipping.carrier &&
+                  vm.shipping.method) {
+
+                  vm.showJSON = true; // SHOW JSON
+                  console.log("Shipping JSON:", vm.shipping);
+
+              } else {
+                  vm.showJSON = false; // HIDE JSON
+                  alert("Please complete all required fields.");
+              }
+          };
         });
 </script>
 
