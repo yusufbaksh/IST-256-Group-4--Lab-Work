@@ -6,7 +6,7 @@ function sendCartToAPI(cartData) {
     console.log("Sending cart data to API:", cartData);
 
     $.ajax({
-        url: "https://your-api-endpoint.com/api/cart",
+        url: "https://example.com/api/cart",
         type: "POST",
         data: JSON.stringify(cartData),
         contentType: "application/json",
