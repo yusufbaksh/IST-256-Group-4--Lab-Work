@@ -78,8 +78,8 @@ $(document).ready(function () {
     $(".removeBtn").on("click", function() {
         let idx = $(this).data("index");
         if(confirm(`Remove ${cart[idx].productName} from cart?`)) {
-            cart.splice(idx, 1); // remove the item from cart
-            renderCart();        // re-render the table and totals
+            cart.splice(idx, 1); 
+            renderCart();        
         }
     });
     }
@@ -102,7 +102,7 @@ $(document).ready(function () {
         return;
     }
 
-    sendCartToAPI(cart); // ✅ use Person 3's file
+    sendCartToAPI(cart); 
     });
 
     });
