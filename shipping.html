@@ -1,3 +1,8 @@
+<!--
+Yusuf Baksh - HTML Structure
+Liya Aji - AngularJS + JSON Output
+-->
+
 <!DOCTYPE html>
 <html lang="en" ng-app="shippingApp">
 <head>
@@ -68,7 +73,13 @@
 
         <!-- Person 3: Liya Aji -->
       
-    <button type="button" class="btn btn-primary" ng-click="shipCtrl.submitForm()">Submit</button>
+    <button type="button"
+        class="btn btn-primary"
+        ng-click="shipCtrl.submitForm()"
+        ng-disabled="shippingForm.$invalid">
+    Submit
+    </button>
+      
     </form>
 
     <!-- JSON Output -->
@@ -76,7 +87,7 @@
         <h4>Shipping JSON Data:</h4>
       
         <div ng-show="shipCtrl.showJSON">
-        <pre>{{ shipCtrl.shipping | json }}</pre>
+        <pre>{{ shipCtrl.shippingOutput | json }}</pre>
     </div>
     </div>
 </div>
@@ -93,6 +104,7 @@
             */
 
             vm.shipping = {};
+            vm.shippingOutput = {}; 
             vm.showJSON = false;
 
             vm.submitForm = function() {
@@ -103,15 +115,23 @@
                   vm.shipping.zip &&
                   vm.shipping.carrier &&
                   vm.shipping.method) {
+     
+                  vm.shippingOutput = {
+                    address: vm.shipping.address,
+                    city: vm.shipping.city,
+                    state: vm.shipping.state,
+                    zip: vm.shipping.zip,
+                    carrierName: vm.shipping.carrier,
+                    shippingMethod: vm.shipping.method
+                  };
 
-                  vm.showJSON = true; // SHOW JSON
-                  console.log("Shipping JSON:", vm.shipping);
+                  vm.showJSON = true;
 
               } else {
-                  vm.showJSON = false; // HIDE JSON
+                  vm.showJSON = false;
                   alert("Please complete all required fields.");
               }
-          };
+        };
         });
 </script>
 
