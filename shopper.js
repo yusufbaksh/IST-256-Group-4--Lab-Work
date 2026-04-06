@@ -9,7 +9,6 @@ Task: Display JSON on the web page after submit
 
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("shopperForm");
-  const output = document.getElementById("output");
 
   if (!form) {
     console.log("Form not found");
