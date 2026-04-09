@@ -1,5 +1,5 @@
 // Author: Liya Aji
-// Task: NodeJS backend - RESTful services to handle receiving JSON collections (shopper, cart, billing, returns)
+// Task: NodeJS backend - RESTful services to handle JSON collections
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -9,34 +9,30 @@ const PORT = 3004;
 
 app.use(bodyParser.json());
 
-// Test route
+
 app.get('/', (req, res) => {
-    res.send('Server is running!');
+    res.send('Hello express!');
 });
 
-// Test POST route
-app.post('/test', (req, res) => {
-    console.log(req.body);
-    res.json({ message: 'Data received!', data: req.body });
-});
-
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
-// Recieve Returns Data
+// Receive Returns Data
 app.post('/returns', (req, res) => {
     console.log("Returns Data:", req.body);
     res.json({ status: "Returns received" });
 });
 
-// Recieve Billing Data 
+// Receive Billing Data
 app.post('/billing', (req, res) => {
     console.log("Billing Data:", req.body);
     res.json({ status: "Billing received" });
 });
 
-// Recieve Shopping Cart
+// Receive Shopping Cart Data
 app.post('/cart', (req, res) => {
     console.log("Cart Data:", req.body);
     res.json({ status: "Cart received" });
+});
+
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
