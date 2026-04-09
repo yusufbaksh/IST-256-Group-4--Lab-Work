@@ -1,3 +1,6 @@
+// Author: Liya Aji
+// Task: NodeJS backend - RESTful services to handle receiving JSON collections (shopper, cart, billing, returns)
+
 const express = require('express');
 const bodyParser = require('body-parser');
 
