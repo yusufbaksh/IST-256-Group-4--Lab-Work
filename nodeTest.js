@@ -23,19 +23,19 @@ app.post('/test', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
-// RECEIVE RETURNS DATA
+// Recieve Returns Data
 app.post('/returns', (req, res) => {
     console.log("Returns Data:", req.body);
     res.json({ status: "Returns received" });
 });
 
-// RECEIVE BILLING DATA
+// Recieve Billing Data 
 app.post('/billing', (req, res) => {
     console.log("Billing Data:", req.body);
     res.json({ status: "Billing received" });
 });
 
-// RECEIVE SHOPPING CART
+// Recieve Shopping Cart
 app.post('/cart', (req, res) => {
     console.log("Cart Data:", req.body);
     res.json({ status: "Cart received" });
