@@ -11,7 +11,7 @@ app.controller("ReturnsController", function($scope) {
     $scope.submitReturn = function() {
 
         $.ajax({
-            url: "https://example.com/api/returns",  // placeholder until NodeJS API is built
+            url: "http://130.203.136.203:3004/returns",  
             type: "POST",
             data: JSON.stringify($scope.return),
             contentType: "application/json",
