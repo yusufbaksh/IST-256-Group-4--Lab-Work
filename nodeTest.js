@@ -42,6 +42,10 @@ app.post('/cart', (req, res) => {
     res.json({ status: "Cart received" });
 });
 
+app.post('/products', (req, res) => {
+    console.log("Product received:", req.body);
+    res.json({ status: "Product received", data: req.body });
+});
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
