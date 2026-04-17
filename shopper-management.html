@@ -5,40 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shopper Management</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
+  
   <!-- 
   Person 1: Yusuf Baksh - Form Data Collection
   Person 2: Liya Aji - JSON Shopper Document Creation (shopper.js)
   Pesron 3: Martin Shestani | Task: Display JSON shopper document 
   -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">YusufSpeedShop</a>
 
-  <h2>Shopper Management</h2>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="signup.html">Signup</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+
+        <li class="nav-item"><a class="nav-link" href="shopper-management.html">Shopper</a></li>
+        <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="shoppingcart.html">Cart</a></li>
+
+        <li class="nav-item"><a class="nav-link" href="shipping.html">Shipping</a></li>
+        <li class="nav-item"><a class="nav-link" href="returns.html">Returns</a></li>
+        <li class="nav-item"><a class="nav-link" href="billings.html">Billing</a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div class="container mt-5">
 
   <form id="shopperForm">
-    <label for="shopperEmail">Email *</label>
-    <input type="email" id="shopperEmail"><br><br>
 
-    <label for="shopperName">Name *</label>
-    <input type="text" id="shopperName"><br><br>
+    <div class="mb-3">
+      <label for="shopperEmail" class="form-label">Email *</label>
+      <input type="email" class="form-control" id="shopperEmail">
+    </div>
 
-    <label for="shopperPhone">Phone</label>
-    <input type="tel" id="shopperPhone"><br><br>
+    <div class="mb-3">
+      <label for="shopperName" class="form-label">Name *</label>
+      <input type="text" class="form-control" id="shopperName">
+    </div>
 
-    <label for="shopperAge">Age *</label>
-    <input type="number" id="shopperAge"><br><br>
+    <div class="mb-3">
+      <label for="shopperPhone" class="form-label">Phone</label>
+      <input type="tel" class="form-control" id="shopperPhone">
+    </div>
 
-    <label for="shopperAddress">Address *</label>
-    <textarea id="shopperAddress"></textarea><br><br>
+    <div class="mb-3">
+      <label for="shopperAge" class="form-label">Age *</label>
+      <input type="number" class="form-control" id="shopperAge">
+    </div>
 
-    <button type="submit">Submit</button>
+    <div class="mb-3">
+      <label for="shopperAddress" class="form-label">Address *</label>
+      <textarea class="form-control" id="shopperAddress"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-dark mt-2">Submit</button>
+
   </form>
 
  <h3>Collected Shopper Data</h3>
 <!-- Author: Martin Shestani | Task: Display JSON shopper document on page after submit -->
 <pre id="jsonOutput"></pre>
-
+</div>
   <script src="shopper.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
