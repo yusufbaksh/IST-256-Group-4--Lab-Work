@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost:27017/ist256');
+mongoose.connect('mongodb+srv://martinshestani_db_user:Organics888.@cluster0.nwefo1f.mongodb.net/ist256?appName=Cluster0');
 
 const Shopper = mongoose.model('Shopper', new mongoose.Schema({ name: String, email: String, address: String }));
 const Product = mongoose.model('Product', new mongoose.Schema({ name: String, price: Number, description: String }));
