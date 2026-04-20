@@ -1,0 +1,26 @@
+{
+  "name": "ist-256-group-4--lab-work",
+  "version": "1.0.0",
+  "description": "",
+  "main": "nodeTest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yusufbaksh/IST-256-Group-4--Lab-Work.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/yusufbaksh/IST-256-Group-4--Lab-Work/issues"
+  },
+  "homepage": "https://github.com/yusufbaksh/IST-256-Group-4--Lab-Work#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongoose": "^9.4.1"
+  }
+}
