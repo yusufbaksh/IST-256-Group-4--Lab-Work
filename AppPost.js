@@ -20,4 +20,4 @@ app.post('/shipping', async (req, res) => res.json(await new Shipping(req.body).
 app.post('/returns',  async (req, res) => res.json(await new Returns(req.body).save()));
 app.post('/billing',  (req, res) => res.json({ success: true, data: req.body }));
 
-app.listen(3000, () => console.log('Server running on port 3000'));
+app.listen(3004, () => console.log('Server running on port 3004'));
