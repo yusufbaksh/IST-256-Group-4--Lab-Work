@@ -16,9 +16,7 @@ const Shipping = mongoose.model('Shipping', new mongoose.Schema({ name: String, 
 const Returns = mongoose.model('Returns', new mongoose.Schema({ orderId: String, reason: String, status: String }));
 
 app.get('/products',  async (req, res) => res.json(await Product.find()));
-app.post('/cart',     async (req, res) => res.json(await new Cart(req.body).save()));
 app.post('/shipping', async (req, res) => res.json(await new Shipping(req.body).save()));
-app.post('/returns',  async (req, res) => res.json(await new Returns(req.body).save()));
 app.post('/billing',  (req, res) => res.json({ success: true, data: req.body }));
 
 
