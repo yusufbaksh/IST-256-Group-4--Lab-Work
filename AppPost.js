@@ -78,6 +78,10 @@ app.delete('/cart/:id', async (req,res)=>{
 });
 
 //RETURNS CRUD
+app.post('/returns', async (req,res)=>{
+    res.json(await new Returns(req.body).save());
+});
+
 app.get('/returns', async (req,res)=>{
     res.json(await Returns.find());
 });
