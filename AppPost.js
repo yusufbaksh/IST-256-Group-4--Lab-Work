@@ -19,4 +19,69 @@ app.post('/shipping', async (req, res) => res.json(await new Shipping(req.body).
 app.post('/returns',  async (req, res) => res.json(await new Returns(req.body).save()));
 app.post('/billing',  (req, res) => res.json({ success: true, data: req.body }));
 
+
+//SHOPPER CRUD
+app.post('/shopper', async (req,res)=>{
+    res.json(await new Shopper(req.body).save());
+});
+
+app.get('/shopper', async (req,res)=>{
+    res.json(await Shopper.find());
+});
+
+app.get('/shopper/:id', async (req,res)=>{
+    res.json(await Shopper.findById(req.params.id));
+});
+
+app.put('/shopper/:id', async (req,res)=>{
+    res.json(await Shopper.findByIdAndUpdate(req.params.id, req.body,{new:true}));
+});
+
+app.delete('/shopper/:id', async (req,res)=>{
+    res.json(await Shopper.findByIdAndDelete(req.params.id));
+});
+
+//PRODUCT CRUD
+app.post('/products', async (req,res)=>{
+    res.json(await new Product(req.body).save());
+});
+
+app.get('/products/:id', async (req,res)=>{
+    res.json(await Product.findById(req.params.id));
+});
+
+app.put('/products/:id', async (req,res)=>{
+    res.json(await Product.findByIdAndUpdate(req.params.id, req.body,{new:true}));
+});
+
+app.delete('/products/:id', async (req,res)=>{
+    res.json(await Product.findByIdAndDelete(req.params.id));
+});
+
+//CART CRUD
+app.get('/cart', async (req,res)=>{
+    res.json(await Cart.find());
+});
+
+app.put('/cart/:id', async (req,res)=>{
+    res.json(await Cart.findByIdAndUpdate(req.params.id, req.body,{new:true}));
+});
+
+app.delete('/cart/:id', async (req,res)=>{
+    res.json(await Cart.findByIdAndDelete(req.params.id));
+});
+
+//RETURNS CRUD
+app.get('/returns', async (req,res)=>{
+    res.json(await Returns.find());
+});
+
+app.put('/returns/:id', async (req,res)=>{
+    res.json(await Returns.findByIdAndUpdate(req.params.id, req.body,{new:true}));
+});
+
+app.delete('/returns/:id', async (req,res)=>{
+    res.json(await Returns.findByIdAndDelete(req.params.id));
+});
+
 app.listen(3004, () => console.log('Server running on port 3004'));
