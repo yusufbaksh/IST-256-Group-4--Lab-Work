@@ -61,6 +61,10 @@ app.delete('/products/:id', async (req,res)=>{
 });
 
 //CART CRUD
+app.post('/cart', async (req,res)=>{
+    res.json(await new Cart(req.body).save());
+});
+
 app.get('/cart', async (req,res)=>{
     res.json(await Cart.find());
 });
