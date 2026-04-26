@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" ng-app="returnsApp">
 <head>
@@ -21,6 +22,12 @@
 </head>
 
 <body ng-controller="ReturnsController">
+<!--
+Person 2: Yusuf Baksh
+Task: Frontend + AJAX UI Integration
+Added backend API connection support while keeping the original team layout intact.
+-->
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="index.html">YusufSpeedShop</a>
@@ -70,6 +77,34 @@
 
     <h4>JSON Returned From Server:</h4>
     <pre>{{ serverResponse | json }}</pre>
+
+    <!-- Person 2: Yusuf Baksh | Backend returns table display and CRUD buttons -->
+    <hr>
+    <h4>Returns From Backend</h4>
+    <button type="button" class="btn btn-secondary mb-3" ng-click="loadReturns()">View Returns</button>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Reason</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in returnsList">
+                <td>{{ item.orderId }}</td>
+                <td>{{ item.reason }}</td>
+                <td>{{ item.status }}</td>
+                <td>
+                    <button type="button" class="btn btn-success btn-sm" ng-click="updateReturn(item, 'Approved')">Approve</button>
+                    <button type="button" class="btn btn-warning btn-sm" ng-click="updateReturn(item, 'Pending')">Pending</button>
+                    <button type="button" class="btn btn-danger btn-sm" ng-click="deleteReturn(item)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
 </div>
 
 </body>
