@@ -73,14 +73,10 @@ $(document).ready(function () {
             alert("Weight must be a number.");
             return;
         }
-
         let productObject = {
-            productId: productId,
-            productDescription: productDescription,
-            productCategory: productCategory,
-            unitMeasure: unitMeasure,
-            productPrice: "$" + Number(productPrice).toFixed(2),
-            productWeight: productWeight === "" ? "N/A" : productWeight
+            name: productDescription,
+            description: productDescription,
+            price: Number(productPrice)
         };
 
         productList.push(productObject);
