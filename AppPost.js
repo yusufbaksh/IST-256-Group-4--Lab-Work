@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 mongoose.connect(
-  'mongodb://team4:team4@127.0.0.1:27017/team4DB?authSource=admin'
+  'mongodb://team4:team4@130.203.136.203:27017/team4DB?authSource=admin'
 );
 const Shopper = mongoose.model('Shopper', new mongoose.Schema({ name: String, email: String, address: String }));
 const Product = mongoose.model('Product', new mongoose.Schema({ name: String, price: Number, description: String }));
