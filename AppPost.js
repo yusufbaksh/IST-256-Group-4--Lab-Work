@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 mongoose.connect(
-  'mongodb://team4:team4@130.203.136.203:27017/team4DB?authSource=admin'
+  'mongodb://team4:team4@127.0.0.1:27017/team4DB?authSource=admin'
 )
 .then(() => console.log("MongoDB connected successfully"))
 .catch(err => console.log("MongoDB connection error:", err));
