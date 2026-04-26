@@ -175,7 +175,7 @@ It adds backend API connection, live MongoDB display, create/update/delete actio
 */
 
 $(document).ready(function () {
-    const PRODUCT_API_URL = "http://localhost:3004/products";
+    const PRODUCT_API_URL = "http://130.203.136.203:3004/products";
 
     if ($("#productApiSection").length === 0) {
         $("#jsonOutput").after(`
