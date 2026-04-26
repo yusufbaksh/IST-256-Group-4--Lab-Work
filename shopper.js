@@ -55,7 +55,7 @@ GET/POST/DELETE actions, and a live table display from MongoDB.
 */
 
 document.addEventListener("DOMContentLoaded", function () {
-  const SHOPPER_API_URL = "http://localhost:3004/shopper";
+  const SHOPPER_API_URL = "http://130.203.136.203:3004/shopper";
   const container = document.querySelector(".container");
 
   if (container && !document.getElementById("shopperApiSection")) {
