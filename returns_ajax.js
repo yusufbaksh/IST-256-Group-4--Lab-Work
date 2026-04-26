@@ -11,7 +11,7 @@ GET/POST/PUT/DELETE support, live display, and status output.
 var app = angular.module("returnsApp", []);
 
 app.controller("ReturnsController", function($scope) {
-    const RETURNS_API_URL = "http://localhost:3004/returns";
+    const RETURNS_API_URL = "http://130.203.136.203:3004/returns";
 
     $scope.return = {};
     $scope.serverResponse = {};
