@@ -7,7 +7,7 @@ Supports Create, Read, Update, and Delete with MongoDB.
 
 $(document).ready(function () {
 
-    const API_URL = "http://130.203.136.203:3004";
+    const API_URL = "http://130.203.136.203:3004/cart";
     let cart = [];
 
     loadCartFromAPI();
