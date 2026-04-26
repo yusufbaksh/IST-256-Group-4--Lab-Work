@@ -1,47 +1,42 @@
 /*
-Person 1: Yusuf Baksh
-Task: Form Data Collection
-Person 2: Liya Aji
-Task: JSON Object/Shopper Document Creation
-Person 3: Martin Shestani
-Task: Display JSON on the web page after submit
+Person 2: Yusuf Baksh
+Task: Frontend + AJAX UI Integration
+Connected shopper page to backend API (CRUD + live display)
 */
 
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("shopperForm");
+$(document).ready(function () {
 
-  if (!form) {
-    console.log("Form not found");
-    return;
-  }
+    const API_URL = "http://localhost:3004/shopper";
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+    loadShoppers();
 
-    const email = document.getElementById("shopperEmail").value.trim();
-    const name = document.getElementById("shopperName").value.trim();
-    const phone = document.getElementById("shopperPhone").value.trim();
-    const age = document.getElementById("shopperAge").value.trim();
-    const address = document.getElementById("shopperAddress").value.trim();
+    // CREATE SHOPPER
+    $("#shopperForm").submit(function (e) {
+        e.preventDefault();
 
-    if (email === "" || name === "" || age === "" || address === "") {
-      alert("Please fill out all required fields.");
-      return;
+        let shopper = {
+            name: $("#shopperName").val(),
+            email: $("#shopperEmail").val(),
+            address: $("#shopperAddress").val()
+        };
+
+        $.ajax({
+            url: API_URL,
+            type: "POST",
+            data: JSON.stringify(shopper),
+            contentType: "application/json",
+            success: function () {
+                alert("Shopper added!");
+                loadShoppers();
+            }
+        });
+    });
+
+    // READ SHOPPERS
+    function loadShoppers() {
+        $.get(API_URL, function (data) {
+            $("#jsonOutput").text(JSON.stringify(data, null, 4));
+        });
     }
 
-/*
-Liya Aji - JSON Object Creation
-*/
-
-    const shopperJSON = {
-        shopperEmail: email,
-        shopperName: name,
-        shopperPhone: phone,
-        shopperAge: age,
-        shopperAddress: address
-    };
-    const jsonOutput = JSON.stringify(shopperJSON, null, 4);
-    document.getElementById("jsonOutput").textContent = jsonOutput;
-
-  });
 });
